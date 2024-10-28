@@ -34,7 +34,7 @@ public class GaraCavallo {
             String nomeCavallo = scanner.nextLine();
 
            
-            Cavallo cavallo = new Cavallo(nomeCavallo, lunghezzaGara);
+            Cavallo cavallo = new Cavallo(nomeCavallo, 0, lunghezzaGara);
             
            
             Thread cavalloThread = new Thread(cavallo);  
@@ -44,13 +44,13 @@ public class GaraCavallo {
        
         System.out.println("La gara è iniziata!");
         for (Thread cavallo : cavalli) {
-            cavallo.start();  // Avviamo ogni thread
+            cavallo.start(); 
         }
 
        
         for (Thread cavallo : cavalli) {
             try {
-                cavallo.join();  
+                cavallo.join(); 
             } catch (InterruptedException e) {
                 System.out.println("La gara è stata interrotta.");
             }

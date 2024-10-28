@@ -19,8 +19,8 @@ public class Cavallo implements Runnable {
     private int distanzaPercorsa;  
 
     
-    public Cavallo(String nome, int distanzaTotale) {
-        this.nome = nome;
+    public Cavallo(String nome, int distanzaTotale, int distanzaPercorsa) {
+        this.nome = nome; 
         this.distanzaTotale = distanzaTotale;
         this.distanzaPercorsa = 0;  
     }
@@ -34,16 +34,11 @@ public class Cavallo implements Runnable {
             distanzaPercorsa += passo;
 
            
-            if (distanzaPercorsa > distanzaTotale) {
-                distanzaPercorsa = distanzaTotale;
-            }
-
-            
-            System.out.println(nome + " ha percorso " + distanzaPercorsa + " metri.");
+        System.out.println(nome + " ha percorso " + distanzaPercorsa + " metri.");
 
            
             try {
-                Thread.sleep(500);  
+                Thread.sleep(500); 
             } catch (InterruptedException e) {
                 System.out.println(nome + " è stato interrotto durante la corsa.");
                 Thread.currentThread().interrupt(); 
